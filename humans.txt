@@ -1,15 +1,14 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
-
 # TEAM
 
+    Martin Kraft -- Interaction Designer -- mail@martinKraft.com
     Alex Wenz -- Frontend Developer -- mail@alexwenz.de
+    Markus Tacker --coder::by(♥); // Freelance Señor Web Backend Dev -- m@coderbyheart.de
 
 # THANKS
 
-    <name>
+    http://html5boilerplate.com/
 
-# TECHNOLOGY COLOPHON
+# TECHNOLOGY USED
 
     HTML5, CSS3
     Normalize.css, jQuery, Modernizr
