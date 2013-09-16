@@ -133,7 +133,6 @@ strong, b {
 /*  Logo    */
     #logo { position: absolute; left: 3.75em; top: 2.125em; }
     #logo span { font-weight: 700; color: #FFFFFF; letter-spacing: 0.2em; text-transform: uppercase }
-    #logo span.barcamp { display: none; }
     #logo span.location-date { position: absolute; left: 132px; bottom: 0; }
     #logo span.region { position: absolute; right: 3px; top: 16px; }
     #logo img { width: 27.75em; }
