@@ -1,0 +1,14 @@
+@media screen and (min-width: 768px) {
+  /*  Vertical Lines  */
+  hr.vertical {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    border-width: 0;
+    background-color: #FFFFFF;
+    height: auto;
+    margin: 0;
+    -moz-box-shadow: 2px 2px 4px #7F7F7F;
+    -webkit-box-shadow: 2px 2px 4px #7F7F7F;
+    box-shadow: 2px 2px 4px #7F7F7F; } }
