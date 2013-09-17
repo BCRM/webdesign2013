@@ -1,5 +1,5 @@
 @import "sizes";
-@import "../vendor/nicolasgallagher.com/clearfix.css";
+@import "clearfix";
 
 * {
   box-sizing: border-box;
@@ -27,11 +27,7 @@ strong, b {
     WRAPPER
     ***************************************************************/
 .wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -24.875em;
-  width: 100%;
+  @extend .cf;
 }
 
 header {
@@ -45,11 +41,6 @@ div.main {
   max-width: $maxWidth;
   margin: 0 auto;
   padding-bottom: 6.25em;
-}
-
-footer {
-  height: 24.875em;
-  background: #FFE100 url('../img/bg_footer.png') no-repeat center top;
 }
 
 .push {
@@ -214,13 +205,8 @@ article {
 
 div.main {
   nav {
-    padding: 0 2em;
-  }
-}
-
-div.main {
-  nav {
     @include hornav(rgba(#fff, 0.75), rgba(#000, 0.75));
+    padding: 0.5 0;
     margin-bottom: 1.5em;
   }
 }
@@ -358,8 +344,8 @@ fieldset {
 }
 
 fieldset.input-with-button {
+  @extend .cf;
   button {
-    width: 193px;
     float: left;
     width: 26%;
     .arrow {
@@ -407,6 +393,7 @@ label.checkbox {
 }
 
 form {
+  @extend .cf;
   margin-bottom: 1.75em;
 }
 
@@ -414,15 +401,21 @@ form {
     FOOTER
     ***************************************************************/
 
-footer .inner-wrap {
-  max-width: 56.875em;
-  margin: 0 auto;
-  padding: 2em 0;
-}
-
 footer {
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px #7F7F7F;
+  margin-top: 10em;
+  height: 24.875em;
+  background: #FFE100 url('../img/bg_footer.png') no-repeat center top;
+  h2 {
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px #7F7F7F;
+    font-size: 1em;
+  }
+  .inner-wrap {
+    width: 100%;
+    max-width: $maxWidth;
+    padding: 2em;
+    margin: 0 auto;
+  }
 }
 
 @import "responsive";

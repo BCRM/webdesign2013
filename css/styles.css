@@ -1,4 +1,35 @@
-@import url(../vendor/nicolasgallagher.com/clearfix.css);
+/*
+Source: http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before, .wrapper:before, fieldset.input-with-button:before, form:before,
+.cf:after,
+.wrapper:after,
+fieldset.input-with-button:after,
+form:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after, .wrapper:after, fieldset.input-with-button:after, form:after {
+  clear: both; }
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf, .wrapper, fieldset.input-with-button, form {
+  *zoom: 1; }
+
 * {
   box-sizing: border-box; }
 
@@ -20,13 +51,6 @@ strong, b {
 /*  ***************************************************************
     WRAPPER
     ***************************************************************/
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -24.875em;
-  width: 100%; }
-
 header {
   width: 100%;
   max-width: 990px;
@@ -37,10 +61,6 @@ div.main {
   max-width: 990px;
   margin: 0 auto;
   padding-bottom: 6.25em; }
-
-footer {
-  height: 24.875em;
-  background: #ffe100 url("../img/bg_footer.png") no-repeat center top; }
 
 .push {
   clear: left;
@@ -155,13 +175,11 @@ article {
   padding: 0 2em; }
 
 div.main nav {
-  padding: 0 2em; }
-
-div.main nav {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.75);
   padding: 0.5em;
   text-align: center;
+  padding: 0.5 0;
   margin-bottom: 1.5em; }
   div.main nav a {
     padding: 0 0.5em;
@@ -282,7 +300,6 @@ fieldset {
   margin-top: 1.75em; }
 
 fieldset.input-with-button button {
-  width: 193px;
   float: left;
   width: 26%; }
   fieldset.input-with-button button .arrow {
@@ -323,11 +340,16 @@ form {
 /*  ***************************************************************
     FOOTER
     ***************************************************************/
-footer .inner-wrap {
-  max-width: 56.875em;
-  margin: 0 auto;
-  padding: 2em 0; }
-
 footer {
-  color: #FFFFFF;
-  text-shadow: 1px 1px 2px #7F7F7F; }
+  margin-top: 10em;
+  height: 24.875em;
+  background: #ffe100 url("../img/bg_footer.png") no-repeat center top; }
+  footer h2 {
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px #7F7F7F;
+    font-size: 1em; }
+  footer .inner-wrap {
+    width: 100%;
+    max-width: 990px;
+    padding: 2em;
+    margin: 0 auto; }
