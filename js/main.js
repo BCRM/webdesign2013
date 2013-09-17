@@ -17,7 +17,7 @@ Modernizr.load([
         yep: [ 'vendor/bxslider/jquery.bxslider.css', 'css/slider.css', 'vendor/bxslider/jquery.bxslider.js' ],
         callback: function (url, result, key) {
             if (!result || key < 2) return;
-            $('div.content-wrap').prepend('<div class="visual"><ul class="slider"><li><img src="img/sessionplanung.jpg" alt="Sessionplanung auf dem BarCamp RheinMain 2012 in Wiesbaden" title="Sessionplanung auf dem BarCamp RheinMain 2012 in Wiesbaden"></li></ul></div>');
+            $('div.main').prepend('<div class="visual"><ul class="slider"><li><img src="img/sessionplanung.jpg" alt="Sessionplanung auf dem BarCamp RheinMain 2012 in Wiesbaden" title="Sessionplanung auf dem BarCamp RheinMain 2012 in Wiesbaden"></li></ul></div>');
             $('.slider').bxSlider(
                 {
                     captions: true,

@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 html, body {
   height: 100%; }
 
@@ -24,10 +27,12 @@ strong, b {
   width: 100%; }
 
 header {
+  width: 100%;
   max-width: 990px;
   margin: 0 auto; }
 
-.content-wrap {
+div.main {
+  width: 100%;
   max-width: 990px;
   margin: 0 auto;
   padding-bottom: 6.25em; }
@@ -43,35 +48,34 @@ footer {
 /*  ***************************************************************
     HEADER
     ***************************************************************/
-header {
-  position: relative;
-  height: 180px;
-  margin-bottom: 40px; }
-
 /*  Vertical Lines  */
 header hr {
   display: none; }
 
 @media screen and (min-width: 990px) {
-  header hr {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    border-width: 0;
-    background-color: #FFFFFF;
-    height: auto;
-    margin: 0;
-    -moz-box-shadow: 2px 2px 4px #7F7F7F;
-    -webkit-box-shadow: 2px 2px 4px #7F7F7F;
-    box-shadow: 2px 2px 4px #7F7F7F; }
-  header hr:first-child {
-    left: 0; }
-  header hr {
-    right: 14.25em; }
-  header hr:last-child {
-    right: 0; } }
+  header {
+    position: relative;
+    height: 180px;
+    margin-bottom: 40px; }
+    header hr {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      border-width: 0;
+      background-color: #FFFFFF;
+      height: auto;
+      margin: 0;
+      -moz-box-shadow: 2px 2px 4px #7F7F7F;
+      -webkit-box-shadow: 2px 2px 4px #7F7F7F;
+      box-shadow: 2px 2px 4px #7F7F7F; }
+    header hr:first-child {
+      left: 0; }
+    header hr {
+      right: 14.25em; }
+    header hr:last-child {
+      right: 0; } }
 /* Logo */
 header h1 {
   margin: 1em 5%;
@@ -110,7 +114,7 @@ header nav {
   header nav a {
     padding: 0 0.5em;
     font-weight: 300;
-    color: #FFFFFF;
+    color: white;
     text-shadow: 1px 1px 2px #7F7F7F;
     text-decoration: none;
     letter-spacing: 0.0625em; }
@@ -124,12 +128,13 @@ header nav {
     text-align: left;
     position: absolute;
     width: 10em;
-    top: 1em;
+    top: 0.75em;
     border: 0; }
     header nav a {
       display: block;
-      margin: .25em 0;
-      line-height: 1.25; }
+      margin: 0;
+      padding: 0;
+      line-height: 1.85em; }
   header nav.event {
     right: 16.75em;
     width: 7em; }
@@ -145,35 +150,57 @@ header nav {
   box-shadow: 2px 2px 4px #7F7F7F; }
 
 /*  Spalten */
-.col-row {
-  margin-top: 2.75em; }
-
-.col {
-  float: left; }
-
 article {
-  max-width: 45em;
-  margin: 0 2.5em; }
+  padding: 0 2em; }
 
-aside {
-  width: 11.875em; }
+div.main nav {
+  padding: 0 2em; }
 
-/* Navigation */
-aside nav {
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  padding: 1.75em 0;
-  margin: 0 0 2em 0; }
-  aside nav a {
-    margin: .25em 0;
-    color: #000;
+div.main nav {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 0.5em;
+  text-align: center;
+  margin-bottom: 1.5em; }
+  div.main nav a {
+    padding: 0 0.5em;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.75);
+    text-shadow: 1px 1px 2px #7F7F7F;
     text-decoration: none;
-    display: block; }
-  aside nav a:hover {
+    letter-spacing: 0.0625em; }
+  div.main nav a:hover {
     color: #E52479; }
-  aside nav a.active {
+  div.main nav a.active {
     font-weight: 700; }
 
+@media screen and (min-width: 750px) {
+  article {
+    float: left;
+    width: 75%; }
+
+  div.main nav {
+    float: right;
+    width: 25%;
+    margin-top: 2.75em; }
+
+  article {
+    margin-top: 2.75em; } }
+/* Navigation in Content */
+@media screen and (min-width: 750px) {
+  div.main nav {
+    text-align: left;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 1.75em 0; }
+    div.main nav a {
+      margin: .25em 0;
+      padding: 0;
+      color: #000;
+      display: block;
+      text-shadow: none; }
+    div.main nav a:hover {
+      color: #E52479; } }
 /*  Textauszeichnungen  */
 article h1 {
   font-weight: 300;

@@ -1,5 +1,9 @@
 @import "sizes";
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
 }
@@ -30,14 +34,16 @@ strong, b {
 }
 
 header {
+  width: 100%;
   max-width: $maxWidth;
   margin: 0 auto;
 }
 
-.content-wrap {
+div.main {
+  width: 100%;
   max-width: $maxWidth;
   margin: 0 auto;
-  padding-bottom: 6.25em
+  padding-bottom: 6.25em;
 }
 
 footer {
@@ -54,12 +60,6 @@ footer {
     HEADER
     ***************************************************************/
 
-header {
-  position: relative;
-  height: 180px;
-  margin-bottom: 40px
-}
-
 /*  Vertical Lines  */
 header {
   hr {
@@ -69,6 +69,9 @@ header {
 
 @media screen and (min-width: $maxWidth) {
   header {
+    position: relative;
+    height: 180px;
+    margin-bottom: 40px;
     hr {
       display: block;
       position: absolute;
@@ -138,28 +141,31 @@ header {
   }
 }
 
+@mixin hornav($bordercolor, $color) {
+  width: 100%;
+  border-top: 1px solid $bordercolor;
+  padding: 0.5em;
+  text-align: center;
+  a {
+    padding: 0 0.5em;
+    font-weight: 300;
+    color: $color;
+    text-shadow: 1px 1px 2px #7F7F7F;
+    text-decoration: none;
+    letter-spacing: 0.0625em
+  }
+  a:hover {
+    color: #E52479;
+  }
+  a.active {
+    font-weight: 700
+  }
+}
+
 /*  Navigationen    */
 header {
   nav {
-    width: 100%;
-    border-top: 1px solid rgba(#fff, 0.75);
-    padding: 0.5em;
-    text-align: center;
-    a {
-      padding: 0 0.5em;
-      font-weight: 300;
-      color: #FFFFFF;
-      text-shadow: 1px 1px 2px #7F7F7F;
-      text-decoration: none;
-      letter-spacing: 0.0625em
-    }
-    a:hover {
-      color: #E52479;
-    }
-
-    a.active {
-      font-weight: 700
-    }
+    @include hornav(rgba(#fff, 0.75), #FFFFFF);
   }
 }
 
@@ -169,12 +175,13 @@ header {
       text-align: left;
       position: absolute;
       width: 10em;
-      top: 1em;
+      top: 0.75em;
       border: 0;
       a {
         display: block;
-        margin: .25em 0;
-        line-height: 1.25;
+        margin: 0;
+        padding: 0;
+        line-height: 1.85em;
       }
     }
     nav.event {
@@ -200,41 +207,58 @@ header {
 }
 
 /*  Spalten */
-.col-row {
-  margin-top: 2.75em;
-}
-
-.col {
-  float: left;
-}
-
 article {
-  max-width: 45em;
-  margin: 0 2.5em
+  padding: 0 2em
 }
 
-aside {
-  width: 11.875em;
-}
-
-/* Navigation */
-aside {
+div.main {
   nav {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    padding: 1.75em 0;
-    margin: 0 0 2em 0;
-    a {
-      margin: .25em 0;
-      color: #000;
-      text-decoration: none;
-      display: block;
+    padding: 0 2em;
+  }
+}
+
+div.main {
+  nav {
+    @include hornav(rgba(#fff, 0.75), rgba(#000, 0.75));
+    margin-bottom: 1.5em;
+  }
+}
+
+@media screen and (min-width: $maxContentWidth) {
+  article {
+    float: left;
+    width: 75%;
+  }
+  div.main {
+    nav {
+      float: right;
+      width: 25%;
+      margin-top: 2.75em;
     }
-    a:hover {
-      color: #E52479;
-    }
-    a.active {
-      font-weight: 700;
+  }
+  article {
+    margin-top: 2.75em;
+  }
+}
+
+/* Navigation in Content */
+@media screen and (min-width: $maxContentWidth) {
+  div.main {
+    nav {
+      text-align: left;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      padding: 1.75em 0;
+      a {
+        margin: .25em 0;
+        padding: 0;
+        color: #000;
+        display: block;
+        text-shadow: none;
+      }
+      a:hover {
+        color: #E52479;
+      }
     }
   }
 }
