@@ -270,7 +270,7 @@ fieldset {
   margin-top: 1.75em;
   position: relative; }
 
-input[type=text] {
+input[type=text], input[type=email] {
   width: 100%;
   border: none;
   color: #FFFFFF;
@@ -305,8 +305,8 @@ fieldset {
   margin-top: 1.75em; }
 
 fieldset.input-with-button button {
-  float: left;
-  width: 26%; }
+  float: right;
+  width: 150px; }
   fieldset.input-with-button button .arrow {
     position: absolute;
     right: 12px;
@@ -319,12 +319,17 @@ fieldset.input-with-button button {
 fieldset.input-with-button button:hover .arrow {
   background-position: -30px 0; }
 fieldset.input-with-button input {
-  float: left;
-  width: 74%;
-  min-width: 320px; }
+  width: 100%; }
 fieldset.input-with-button label {
   display: none; }
 
+@media screen and (min-width: 550px) {
+  fieldset.input-with-button button {
+    float: left;
+    width: 26%; }
+  fieldset.input-with-button input {
+    float: left;
+    width: 74%; } }
 label.checkbox {
   margin-top: 1.75em; }
   label.checkbox input[type=checkbox] {
