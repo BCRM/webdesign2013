@@ -1,4 +1,5 @@
 @import "sizes";
+@import "../vendor/nicolasgallagher.com/clearfix.css";
 
 * {
   box-sizing: border-box;
@@ -314,13 +315,12 @@ article > h1 {
   font-style: italic
 }
 
-.input-wrap,
-.checkbox-wrap {
+fieldset {
   margin-top: 1.75em;
   position: relative
 }
 
-.input {
+input[type=text] {
   width: 100%;
   border: none;
   color: #FFFFFF;
@@ -334,7 +334,7 @@ article > h1 {
   box-sizing: border-box;
 }
 
-.button {
+button {
   text-align: left;
   font-family: 'Ubuntu';
   font-size: 16px;
@@ -353,68 +353,61 @@ article > h1 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Style=2);
 }
 
-.form-submit .button {
-  width: 193px
-}
-
-.form-submit .button .arrow {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  margin-top: -15px;
-  display: block;
-  width: 30px;
-  height: 30px;
-  background: transparent url('../img/bx_controls.png') no-repeat -30px -30px
-}
-
-.form-submit .button:hover .arrow {
-  background-position: -30px 0;
-}
-
-.form-infomail .cf  .input-wrap {
-  float: left;
-  width: 74%;
-  min-width: 320px
-}
-
-.form-infomail .cf .form-submit {
+fieldset {
   margin-top: 1.75em;
-  float: left;
-  width: 26%
 }
 
-input[type=checkbox] {
-  visibility: hidden;
+fieldset.input-with-button {
+  button {
+    width: 193px;
+    float: left;
+    width: 26%;
+    .arrow {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      margin-top: -15px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: transparent url('../img/bx_controls.png') no-repeat -30px -30px;
+    }
+  }
+  button:hover {
+    .arrow {
+      background-position: -30px 0;
+    }
+  }
+  input {
+    float: left;
+    width: 74%;
+    min-width: 320px;
+  }
+  label {
+    display: none;
+  }
 }
 
-.checkbox {
-  background-color: #000000;
-  float: left;
-  width: 25px;
-  height: 25px;
-  position: relative;
-  margin: 0 20px 0 0
+label.checkbox {
+  margin-top: 1.75em;
+  input[type=checkbox] {
+    display: none;
+  }
+  span {
+    background-color: #000000;
+    float: left;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin: 0 10px 0 0;
+  }
+  input[type=checkbox]:checked + span {
+    background: #000 url('../img/checkbox.png') no-repeat center center;
+  }
 }
 
-.checkbox label {
-  display: block;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-}
-
-.checkbox input[type=checkbox]:checked + label {
-  background: transparent url('../img/checkbox.png') no-repeat center center;
-}
-
-.checkbox-wrap label {
-  display: block;
-  float: left;
+form {
+  margin-bottom: 1.75em;
 }
 
 /*  ***************************************************************
