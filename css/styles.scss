@@ -240,11 +240,10 @@ header {
 /*  Spalten */
 div.main {
   article {
-    padding: 0 2em
+    padding: 0 1em;
   }
   nav {
     @include hornav(rgba(#fff, 0.75), rgba(#000, 0.75));
-    padding: 0.5 0;
     margin-bottom: 1.5em;
   }
 }
@@ -252,6 +251,7 @@ div.main {
 @media screen and (min-width: $maxContentWidth) {
   div.main {
     article {
+      padding: 0 2em;
       float: left;
       width: 75%;
       margin-top: 2.75em;
@@ -260,6 +260,7 @@ div.main {
       float: right;
       width: 25%;
       margin-top: 2.75em;
+      padding: 0.5 0;
     }
   }
 }
@@ -461,7 +462,7 @@ footer {
     width: 100%;
     max-width: $maxWidth;
     margin: 0 auto;
-    padding: 2em;
+    padding: 1em;
   }
   #sponsors {
     width: 100%;
@@ -474,7 +475,14 @@ footer {
     }
 
   }
+}
 
+@media screen and (min-width: $maxContentWidth) {
+  footer {
+    .inner-wrap {
+      padding: 2em;
+    }
+  }
 }
 
 @import "responsive";
