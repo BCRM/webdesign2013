@@ -79,7 +79,6 @@ header hr {
     height: 180px;
     margin-bottom: 40px; }
     header hr {
-      display: block;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -92,11 +91,19 @@ header hr {
       -webkit-box-shadow: 2px 2px 4px #7F7F7F;
       box-shadow: 2px 2px 4px #7F7F7F; }
     header hr:first-child {
-      left: 0; }
+      left: 0;
+      display: none; }
     header hr {
-      right: 14.25em; }
+      right: 14.25em;
+      display: block; }
     header hr:last-child {
-      right: 0; } }
+      right: 0;
+      display: none; } }
+@media screen and (min-width: 1090px) {
+  header hr:first-child {
+    display: block; }
+  header hr:last-child {
+    display: block; } }
 /* Logo */
 header h1 {
   margin: 1em 5%;

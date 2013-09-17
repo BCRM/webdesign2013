@@ -65,7 +65,7 @@ header {
     height: 180px;
     margin-bottom: 40px;
     hr {
-      display: block;
+
       position: absolute;
       top: 0;
       bottom: 0;
@@ -81,13 +81,26 @@ header {
     // Positions
     hr:first-child {
       left: 0;
+      display: none;
     }
     hr {
       right: 14.25em;
+      display: block;
     }
-
     hr:last-child {
-      right: 0
+      right: 0;
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: ($maxWidth + 100)) {
+  header {
+    hr:first-child {
+      display: block;
+    }
+    hr:last-child {
+      display: block;
     }
   }
 }
