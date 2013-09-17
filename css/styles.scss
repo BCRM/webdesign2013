@@ -111,28 +111,51 @@ header {
 header {
   h1 {
     margin: 1em 5%;
-    font-size: 1em;
+    font-size: 0.5em;
     position: relative;
     width: 90%;
     max-width: 444px;
     span {
       font-weight: 700;
       color: #FFFFFF;
-      letter-spacing: 0.2em;
       text-transform: uppercase
     }
     span.location-date {
       position: absolute;
-      left: 132px;
+      left: 30%;
       bottom: 0;
     }
     span.region {
       position: absolute;
-      right: 3px;
-      top: 16px;
+      right: 1%;
+      top: 12%;
     }
     img {
       width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 300px) {
+  header {
+    h1 {
+      letter-spacing: 0.2em;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) {
+  header {
+    h1 {
+      font-size: 0.75em;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    h1 {
+      font-size: 1em;
     }
   }
 }
@@ -159,7 +182,8 @@ header {
     color: $color;
     text-shadow: 1px 1px 2px #7F7F7F;
     text-decoration: none;
-    letter-spacing: 0.0625em
+    letter-spacing: 0.0625em;
+    white-space: nowrap;
   }
   a:hover {
     color: #E52479;
