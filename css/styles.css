@@ -349,7 +349,7 @@ form {
     ***************************************************************/
 footer {
   margin-top: 10em;
-  height: 24.875em;
+  min-height: 24.875em;
   background: #ffe100 url("../img/bg_footer.png") no-repeat center top; }
   footer h2 {
     color: #FFFFFF;
