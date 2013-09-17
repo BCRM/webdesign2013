@@ -180,9 +180,8 @@ header nav {
   box-shadow: 2px 2px 4px #7F7F7F; }
 
 /*  Spalten */
-article {
+div.main article {
   padding: 0 2em; }
-
 div.main nav {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.75);
@@ -203,16 +202,13 @@ div.main nav {
     font-weight: 700; }
 
 @media screen and (min-width: 750px) {
-  article {
+  div.main article {
     float: left;
-    width: 75%; }
-
+    width: 75%;
+    margin-top: 2.75em; }
   div.main nav {
     float: right;
     width: 25%;
-    margin-top: 2.75em; }
-
-  article {
     margin-top: 2.75em; } }
 /* Navigation in Content */
 @media screen and (min-width: 750px) {
@@ -360,5 +356,11 @@ footer {
   footer .inner-wrap {
     width: 100%;
     max-width: 990px;
-    padding: 2em;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 2em; }
+  footer #sponsors {
+    width: 100%; }
+    footer #sponsors a img {
+      width: 14%;
+      min-width: 80px;
+      max-width: 126px; }

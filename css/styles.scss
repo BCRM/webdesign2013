@@ -214,11 +214,10 @@ header {
 }
 
 /*  Spalten */
-article {
-  padding: 0 2em
-}
-
 div.main {
+  article {
+    padding: 0 2em
+  }
   nav {
     @include hornav(rgba(#fff, 0.75), rgba(#000, 0.75));
     padding: 0.5 0;
@@ -227,19 +226,17 @@ div.main {
 }
 
 @media screen and (min-width: $maxContentWidth) {
-  article {
-    float: left;
-    width: 75%;
-  }
   div.main {
+    article {
+      float: left;
+      width: 75%;
+      margin-top: 2.75em;
+    }
     nav {
       float: right;
       width: 25%;
       margin-top: 2.75em;
     }
-  }
-  article {
-    margin-top: 2.75em;
   }
 }
 
@@ -428,9 +425,21 @@ footer {
   .inner-wrap {
     width: 100%;
     max-width: $maxWidth;
-    padding: 2em;
     margin: 0 auto;
+    padding: 2em;
   }
+  #sponsors {
+    width: 100%;
+    a {
+      img {
+        width: floor(99%/7);
+        min-width: 80px;
+        max-width: 126px;
+      }
+    }
+
+  }
+
 }
 
 @import "responsive";
